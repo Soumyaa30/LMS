@@ -7,16 +7,23 @@ import { clerkWebHooks } from './controllers/webhooks.js'
 //Initialize express
 const app = express()
 
+app.post('/clerk', express.raw({ type: 'application/json' }), clerkWebHooks)
+
 //connect to database
-await connectDB()
+
 
 //middlewares
-app.use(cors())
+app.use(cors({
+    origin: 'http://localhost:3000', // your local frontend
+    credentials: true
+  }))
+
+  connectDB()
 
 //routes
 app.get('/', (req, res)=> res.send("API Working"))
 //app.post('/clerk', express.json(), clerkWebHooks)
-app.post('/clerk', express.raw({ type: 'application/json' }), clerkWebHooks)
+
 
 
 //port
