@@ -20,7 +20,7 @@ export const clerkWebHooks = async (req, res)=>{
         console.log("👤 User Data:", data);
 
         switch (type) {
-            case 'user-created': {
+            case 'user.created': {
                 const userData = {
                     _id: data.id,
                     email: data.email_addresses[0].email_address,
