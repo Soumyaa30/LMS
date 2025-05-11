@@ -68,19 +68,47 @@ const stripeInstance = new Stripe(process.env.STRIPE_SECRET_KEY)
 
 export const stripeWebhooks = async(req, res) =>{
     const sig = req.headers['stripe-signature'];
+    console.log('Received Webhook Signature:', sig);
+    console.log('Request Body:', req.body); 
 
   let event;
 
   try {
     event = Stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    console.log('Event constructed:', event);
   }
   catch (err) {
+    console.error('❌ Error constructing event:', err.message);
     res.status(400).send(`Webhook Error: ${err.message}`);
   }
 
   // Handle the event
   switch (event.type) {
-    case 'payment_intent.succeeded':{
+    case 'checkout.session.completed': {
+        const session = event.data.object;
+    
+        const purchaseId = session.metadata.purchaseId;
+    
+        const purchaseData = await Purchase.findById(purchaseId);
+        if (purchaseData) {
+            purchaseData.status = 'completed';
+            await purchaseData.save();
+        }
+    
+        // Optional: update user & course records
+        const userData = await User.findById(purchaseData.userId);
+        const courseData = await Course.findById(purchaseData.courseId.toString());
+    
+        courseData.enrolledStudents.push(userData);
+        await courseData.save();
+    
+        userData.enrolledCourses.push(courseData._id);
+        await userData.save();
+    
+        break;
+    } 
+    
+    /* case 'payment_intent.succeeded':{
       const paymentIntent = event.data.object;
       const paymentIntentId = paymentIntent.id;
 
@@ -103,7 +131,8 @@ export const stripeWebhooks = async(req, res) =>{
       purchaseData.status = 'completed'
       await purchaseData.save()
 
-      break;}
+      break;} */
+
     case 'payment_intent.payment_failed':{
         const paymentIntent = event.data.object;
         const paymentIntentId = paymentIntent.id;
