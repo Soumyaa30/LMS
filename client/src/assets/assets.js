@@ -126,7 +126,7 @@ export const dummyTestimonial = [
 ];
 
 export const dummyDashboardData = {
-    "totalEarnings": 707.38,
+    "totalEarnings": 35670,
     "enrolledStudentsData": [
         {
             "courseTitle": "Introduction to JavaScript",
@@ -161,7 +161,7 @@ export const dummyDashboardData = {
             }
         },
         {
-            "courseTitle": "Cybersecurity Basics",
+            "courseTitle": "Test Course Title",
             "student": {
                 "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
                 "name": "Soumya Walia",
@@ -180,16 +180,7 @@ export const dummyStudentEnrolled = [
             "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ydDRHc0NqSDJYV0k2cm9RRWlUR2lhTGNKVHgifQ?width=160"
         },
         "courseTitle": "Introduction to JavaScript",
-        "purchaseDate": "2024-12-20T08:39:55.509Z"
-    },
-    {
-        "student": {
-            "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
-            "name": "Soumya Walia",
-            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ydDRHc0NqSDJYV0k2cm9RRWlUR2lhTGNKVHgifQ?width=160"
-        },
-        "courseTitle": "Introduction to JavaScript",
-        "purchaseDate": "2024-12-20T08:59:49.964Z"
+        "purchaseDate": "2025-04-20T08:39:55.509Z"
     },
     {
         "student": {
@@ -198,7 +189,7 @@ export const dummyStudentEnrolled = [
             "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ydDRHc0NqSDJYV0k2cm9RRWlUR2lhTGNKVHgifQ?width=160"
         },
         "courseTitle": "Advanced Python Programming",
-        "purchaseDate": "2024-12-20T11:03:42.931Z"
+        "purchaseDate": "2025-04-20T08:59:49.964Z"
     },
     {
         "student": {
@@ -207,7 +198,25 @@ export const dummyStudentEnrolled = [
             "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ydDRHc0NqSDJYV0k2cm9RRWlUR2lhTGNKVHgifQ?width=160"
         },
         "courseTitle": "Web Development Bootcamp",
-        "purchaseDate": "2024-12-20T11:04:48.798Z"
+        "purchaseDate": "2025-04-21T11:03:42.931Z"
+    },
+    {
+        "student": {
+            "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+            "name": "Soumya Walia",
+            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ydDRHc0NqSDJYV0k2cm9RRWlUR2lhTGNKVHgifQ?width=160"
+        },
+        "courseTitle": "Data Science with Python",
+        "purchaseDate": "2025-04-21T11:04:48.798Z"
+    },
+    {
+        "student": {
+            "_id": "user_2qQlvXyr02B4Bq6hT0Gvaa5fT9V",
+            "name": "Soumya Walia",
+            "imageUrl": "https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18ydDRHc0NqSDJYV0k2cm9RRWlUR2lhTGNKVHgifQ?width=160"
+        },
+        "courseTitle": "Test Course Title",
+        "purchaseDate": "2025-05-12T11:04:48.798Z"
     }
 ]
 
